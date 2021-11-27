@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBMIRecord"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/Blue">
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/minus"
+        android:translationX="20dp"
+        android:translationY="0dp"
+        android:contentDescription="@string/previous"/>
+    <TextView
+        android:id="@+id/text_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="@color/Blue"
+        android:paddingTop="10dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:translationX="70dp"
+        android:translationY="0dp"/>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/text_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newRecord"
+        android:textAlignment="center"
+        android:textColor="@color/Blue"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:translationX="90dp"
+        android:translationY="80dp" />
+
+    <TextView
+        android:id="@+id/Weight"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Weight"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        android:translationX="40dp"
+        android:translationY="140dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:translationX="180dp"
+        android:translationY="120dp"
+        android:background="@drawable/shape">
+
+        <ImageView
+            android:id="@+id/minus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/minus"
+            android:contentDescription="@string/minus"/>
+
+        <TextView
+            android:id="@+id/edit_weight"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:text=""
+            android:background="@drawable/shape"/>
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/plus"
+            android:contentDescription="@string/plus"/>
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/kg"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="@string/Kg"
+        android:textColor="@color/Blue"
+        android:textStyle="normal|bold"
+        android:translationX="340dp"
+        android:translationY="100dp" />
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Length"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        android:translationX="40dp"
+        android:translationY="120dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:translationX="180dp"
+        android:translationY="100dp"
+        android:background="@drawable/shape">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/minus"
+            android:contentDescription="@string/minus"/>
+
+        <EditText
+            android:id="@+id/textView51"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:autofillHints="creditCardNumber"
+            android:background="@drawable/shape"
+            android:inputType="number"
+            android:text=""
+            tools:ignore="LabelFor" />
+
+        <ImageView
+            android:id="@+id/imageButton1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/plus"
+            android:contentDescription="@string/plus"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="@string/cm"
+        android:textColor="@color/Blue"
+        android:textStyle="normal|bold"
+        android:translationX="340dp"
+        android:translationY="80dp" />
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        android:translationX="40dp"
+        android:translationY="100dp" />
+
+    <EditText
+        android:id="@+id/edit_dataBirth"
+        android:layout_width="180dp"
+        android:layout_height="25dp"
+        android:background="@drawable/shape"
+        android:inputType="number"
+        android:translationX="180dp"
+        android:translationY="80dp"
+        android:autofillHints="@string/date"
+        android:labelFor="@id/text_date"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        android:translationX="40dp"
+        android:translationY="100dp" />
+    <EditText
+        android:id="@+id/edit_time"
+        android:layout_width="180dp"
+        android:layout_height="25dp"
+        android:autofillHints="creditCardExpirationDate"
+        android:background="@drawable/shape"
+        android:inputType="number"
+        android:text=""
+        android:translationX="180dp"
+        android:translationY="80dp"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <Button
+        android:id="@+id/save"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/Save"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:translationX="35dp"
+        android:translationY="150dp" />
+
+
+</LinearLayout>
