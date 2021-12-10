@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CompleteInformation"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
 
     <TextView
@@ -156,7 +157,6 @@
             android:layout_height="20dp"
             android:autofillHints="creditCardNumber"
             android:background="@drawable/shape"
-            android:inputType="number"
             android:text=""
             />
 
@@ -193,7 +193,6 @@
         android:layout_height="25dp"
         android:autofillHints="creditCardExpirationDate"
         android:inputType="number"
-        android:text=""
         android:translationX="180dp"
         android:translationY="40dp"
         android:background="@drawable/shape"

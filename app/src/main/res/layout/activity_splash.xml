@@ -27,5 +27,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:translationY="500dp" />
+        android:translationX="300dp"
+        android:translationY="560dp" />
 </LinearLayout>

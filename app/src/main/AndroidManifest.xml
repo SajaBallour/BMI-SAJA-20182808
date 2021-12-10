@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BMIAnalyzerProject">
         <activity
+            android:name=".EditFood"
+            android:exported="false" />
+        <activity
+            android:name=".FoodList"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".Add_Food_details"
+            android:exported="false" />
+        <activity
             android:name=".AddBMIRecord"
             android:exported="false" />
         <activity
