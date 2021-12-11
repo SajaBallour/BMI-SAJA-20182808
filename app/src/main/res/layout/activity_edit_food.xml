@@ -4,6 +4,261 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditFood">
+    tools:context=".EditFood"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Blue"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-40dp">
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="67dp"
+            android:translationX="0dp"
+            android:translationY="0dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_white_24"
+            android:contentDescription="@string/category" />
+
+        <TextView
+            android:id="@+id/Registration_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/Blue"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:translationX="70dp"
+            android:translationY="8dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textaddfood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/editFoodDetails"
+        android:textColor="@color/Blue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:translationY="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textaddfood"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/input_addfoodname"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/name"
+            android:textColor="@color/Blue"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:translationX="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+
+            tools:layout_editor_absoluteY="170dp" />
+
+        <EditText
+            android:id="@+id/textbirthtView2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:autofillHints="name"
+            android:background="@drawable/shape"
+            android:inputType="text"
+            android:textColor="@color/Blue"
+            android:textSize="25sp"
+            android:translationX="170dp"
+            android:translationY="-30dp"
+            tools:ignore="LabelFor" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:translationY="-20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_addfoodname"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/category_addfoodname"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/category"
+                android:textColor="@color/Blue"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:translationX="33dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.197"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="170dp" />
+
+            <EditText
+                android:id="@+id/input_categoryView2"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="category"
+                android:background="@drawable/shape"
+                android:inputType="text"
+                android:textColor="@color/Blue"
+                android:textSize="25sp"
+                android:translationX="60dp" />
+
+
+            <ImageView
+                android:id="@+id/dropdown_caloryView2"
+                android:layout_width="34dp"
+                android:layout_height="37dp"
+                android:background="@drawable/shape"
+                android:textColor="@color/Blue"
+                android:textSize="25sp"
+                android:translationX="25dp"
+                android:translationY="0dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textaddfood"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/calory_addfoodname"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/calory"
+                android:textColor="@color/Blue"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:translationX="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.197"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/input_caloryView2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape"
+                android:textColor="@color/Blue"
+                android:textSize="25sp"
+                android:translationX="60dp" />
+
+            <TextView
+                android:id="@+id/textcmView3"
+                android:layout_width="57dp"
+                android:layout_height="wrap_content"
+                android:text="cal/g"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:translationX="50dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/photo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="67dp"
+        android:text="@string/photo"
+        android:textColor="@color/Blue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:translationX="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="160dp"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@drawable/shape" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/uploadPhoto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.711"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.711"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

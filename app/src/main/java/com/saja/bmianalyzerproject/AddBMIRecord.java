@@ -18,7 +18,7 @@ public class AddBMIRecord extends AppCompatActivity {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(AddBMIRecord.this, AddBMIRecord.class);
+                Intent intent = new Intent(AddBMIRecord.this, Add_Food_details.class);
                 startActivity(intent);
                 finish();
             }

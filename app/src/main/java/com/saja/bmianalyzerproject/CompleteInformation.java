@@ -18,7 +18,7 @@ public class CompleteInformation extends AppCompatActivity {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(CompleteInformation.this, AddBMIRecord.class);
+                Intent intent = new Intent(CompleteInformation.this, Home.class);
                 startActivity(intent);
                 finish();
             }
