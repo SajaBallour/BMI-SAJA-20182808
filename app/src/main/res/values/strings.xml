@@ -59,4 +59,6 @@
     <string name="cal_g">cal/g</string>
     <string name="edit">Edit</string>
     <string name="editFoodDetails">Edit Food Details</string>
+    <string name="password_error" />
+    <string name="name_error">Please enter your name</string>
 </resources>

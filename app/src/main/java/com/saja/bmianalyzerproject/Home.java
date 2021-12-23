@@ -14,7 +14,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        t = new Timer();
+        /*t = new Timer();
         t.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -22,6 +22,6 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },5000);*/
     }
 }

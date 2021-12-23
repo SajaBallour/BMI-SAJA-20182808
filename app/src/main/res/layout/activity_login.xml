@@ -59,12 +59,10 @@
         android:textSize="17sp"
         android:translationX="15dp"
         android:translationY="150dp" />
-
-
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
         android:autofillHints="password"
         android:backgroundTint="@color/Blue"
@@ -81,8 +79,6 @@
         android:translationX="15dp"
         android:translationY="180dp"
         android:textColorHint="@color/light_gray"/>
-
-
     <TextView
         android:id="@+id/question_note"
         android:layout_width="wrap_content"
@@ -124,7 +120,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:translationY="160dp" />
+        android:translationY="150dp" />
 
 
 
