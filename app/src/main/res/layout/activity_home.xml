@@ -96,76 +96,11 @@
         app:layout_constraintTop_toTopOf="@+id/oldStatus"
         tools:ignore="MissingConstraints">
 
-        <TableLayout
-            android:layout_width="270dp"
-            android:layout_height="90dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@color/white">
-
-            <TableRow>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/shape"
-                    android:gravity="center_horizontal"
-                    android:padding="5dp"
-                    android:text="@string/dateD"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/shape"
-                    android:gravity="center_horizontal"
-                    android:padding="5dp"
-                    android:text="@string/weight"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/shape"
-                    android:gravity="center_horizontal"
-                    android:padding="5dp"
-                    android:text="@string/normal"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/shape"
-                    android:gravity="center_horizontal"
-                    android:padding="5dp"
-                    android:text="@string/length"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-            </TableRow>
-        </TableLayout>
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add_food_button"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -181,7 +116,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/add_record_button"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -193,12 +128,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/add_food_button"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/view_food_button"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -209,22 +144,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/add_food_button"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
         android:layout_weight="3"
         android:padding="5dp"
         android:text="@string/logout"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:textColor="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@+id/view_food_button"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
