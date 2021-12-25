@@ -39,6 +39,7 @@ public class Home extends AppCompatActivity {
         view_food = findViewById(R.id.view_food_button);
         add_record.setOnClickListener(view -> btn_AddBMIRecord());
         add_food.setOnClickListener(view -> btn_AddFoodDetails());
+        view_food.setOnClickListener(view -> btn_ViewFood());
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -64,6 +65,10 @@ public class Home extends AppCompatActivity {
 
     public void btn_AddFoodDetails() {
         Intent intent = new Intent(Home.this, Add_Food_details.class);
+        startActivity(intent);
+    }
+    public void btn_ViewFood() {
+        Intent intent = new Intent(Home.this, FoodList.class);
         startActivity(intent);
     }
     @Override
