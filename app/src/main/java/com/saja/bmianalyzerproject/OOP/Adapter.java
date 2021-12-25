@@ -31,7 +31,7 @@ public class Adapter extends RecyclerView.Adapter<Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull final Holder holder, int position) {
-        //holder.bindRestaurant(records.get(position));
+
         BMIRecord food;
         food = records.get(position);
         holder.setBMIRecord(food);
