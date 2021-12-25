@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,26 +13,28 @@ import com.saja.bmianalyzerproject.R;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Holder>{
+
+public class Adapter extends RecyclerView.Adapter<Holder> {
     private ArrayList<BMIRecord> records;
     private Context context;
 
-    public Adapter (ArrayList<BMIRecord> records, Context context) {
+    public Adapter (Context context, ArrayList<BMIRecord> records) {
         this.records=records;
-        this.context=context;
+        this.context = context;
     }
-    @NonNull
+    // @NonNull
     @Override
-    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.element_bmi,parent,false);
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_element_bmi,parent,false);
         return new Holder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
-        BMIRecord record;
-        record = records.get(position);
-        holder.setBMIRecord(record);
+    public void onBindViewHolder(@NonNull final Holder holder, int position) {
+        //holder.bindRestaurant(records.get(position));
+        BMIRecord food;
+        food = records.get(position);
+        holder.setBMIRecord(food);
     }
 
     @Override

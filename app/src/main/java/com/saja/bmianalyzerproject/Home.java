@@ -1,9 +1,9 @@
 package com.saja.bmianalyzerproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,13 +17,12 @@ import com.saja.bmianalyzerproject.OOP.User;
 
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class Home extends AppCompatActivity {
     Timer t;
     TextView logout;
     FirebaseAuth mAuth;
-    RecyclerView home;
+    RecyclerView recyclerView;
     ArrayList<BMIRecord> records;
     Adapter recordAdapter;
     Button add_record;
@@ -38,13 +37,16 @@ public class Home extends AppCompatActivity {
         add_record = findViewById(R.id.add_record_button);
         add_food = findViewById(R.id.add_food_button);
         view_food = findViewById(R.id.view_food_button);
-        add_record.setOnClickListener(view -> btn_record());
-        add_food.setOnClickListener(view -> btn_food());
-        home = findViewById(R.id.home);
+        add_record.setOnClickListener(view -> btn_AddBMIRecord());
+        add_food.setOnClickListener(view -> btn_AddFoodDetails());
+
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.arrow).setAlpha(0L);
-        findViewById(R.id.arrow).setClickable(false);
+        recyclerView = findViewById(R.id.recyclerView);
+        records = (new User()).getRecords();
+
+        recordAdapter = new Adapter(Home.this, records);
+        recyclerView.setAdapter(recordAdapter);
 
         logout.setOnClickListener( view -> {
             mAuth.signOut();
@@ -52,20 +54,15 @@ public class Home extends AppCompatActivity {
 
         });
 
-        home.setLayoutManager(new LinearLayoutManager(this));
-        records = (new User()).getRecords();
-        recordAdapter = new Adapter(records, this);
-        home.setAdapter(recordAdapter);
-
 
     }
 
-    public void btn_record() {
+    public void btn_AddBMIRecord() {
         Intent intent = new Intent(Home.this, AddBMIRecord.class);
         startActivity(intent);
     }
 
-    public void btn_food() {
+    public void btn_AddFoodDetails() {
         Intent intent = new Intent(Home.this, Add_Food_details.class);
         startActivity(intent);
     }

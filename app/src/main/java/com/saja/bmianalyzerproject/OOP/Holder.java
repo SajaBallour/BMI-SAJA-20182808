@@ -2,6 +2,7 @@ package com.saja.bmianalyzerproject.OOP;
 
 import static android.os.Build.VERSION_CODES.R;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,18 +13,20 @@ import com.google.protobuf.StringValue;
 import com.saja.bmianalyzerproject.R;
 
 public class Holder extends RecyclerView.ViewHolder {
-    private final TextView date;
-    private final TextView Status;
-    private final TextView length;
-    private final TextView weight;
-    private BMIRecord record;
-    //private view;
+    TextView date;
+    TextView Status;
+    TextView length;
+    TextView weight;
+    BMIRecord record;
+    Context context;
+
     public Holder(@NonNull View itemView) {
         super(itemView);
-        this.date = itemView.findViewById(com.saja.bmianalyzerproject.R.id.date);
-        this.Status = itemView.findViewById(com.saja.bmianalyzerproject.R.id.status);
-        this.length =itemView.findViewById(com.saja.bmianalyzerproject.R.id.length);
-        this.weight=itemView.findViewById(com.saja.bmianalyzerproject.R.id.weight);
+        date = itemView.findViewById(com.saja.bmianalyzerproject.R.id.date);
+        Status = itemView.findViewById(com.saja.bmianalyzerproject.R.id.status);
+        length =itemView.findViewById(com.saja.bmianalyzerproject.R.id.length);
+        weight=itemView.findViewById(com.saja.bmianalyzerproject.R.id.weight);
+        context = itemView.getContext();
     }
 
 

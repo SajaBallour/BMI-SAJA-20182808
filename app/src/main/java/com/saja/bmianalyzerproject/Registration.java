@@ -57,15 +57,15 @@ public class Registration extends AppCompatActivity {
         String password =  Password.getText().toString();
         String repassword =  RePassword.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        if(TextUtils.isEmpty(name)){
+            Name.setError("You must enter Username");
+            Name.requestFocus();
+        }else if (TextUtils.isEmpty(email)){
             Email.setError("You must enter Email");
             Email.requestFocus();
         }else if(TextUtils.isEmpty(password)){
             Password.setError("You must enter password");
             Password.requestFocus();
-        }else if(TextUtils.isEmpty(name)){
-            Name.setError("You must enter Username");
-            Name.requestFocus();
         }else if(TextUtils.isEmpty(repassword)){
             RePassword.setError("You must enter Re-Password");
             RePassword.requestFocus();
@@ -75,7 +75,7 @@ public class Registration extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(Registration.this,"Successful" ,Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Registration.this,Home.class));
+                        startActivity(new Intent(Registration.this,CompleteInformation.class));
                     }else {
                         Toast.makeText(Registration.this,"error" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
 

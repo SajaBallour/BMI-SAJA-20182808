@@ -10,5 +10,5 @@ public class element_bmi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.element_bmi);
+    setContentView(R.layout.activity_element_bmi);
 }}
