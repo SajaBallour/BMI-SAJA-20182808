@@ -22,9 +22,9 @@ public class Adapter extends RecyclerView.Adapter<Holder> {
         this.records=records;
         this.context = context;
     }
-    // @NonNull
+    @NonNull
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_element_bmi,parent,false);
         return new Holder(view);
     }

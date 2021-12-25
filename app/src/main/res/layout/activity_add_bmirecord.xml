@@ -13,7 +13,7 @@
         android:orientation="horizontal"
         android:background="@color/Blue">
     <ImageView
-        android:id="@+id/imageButton"
+        android:id="@+id/arrow"
         android:layout_width="35dp"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/ic_baseline_arrow_white_24"
@@ -64,21 +64,25 @@
         android:background="@drawable/shape">
 
         <ImageView
-            android:id="@+id/minus"
+            android:id="@+id/minus_weight"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/minus"
             android:contentDescription="@string/minus"/>
 
-        <TextView
-            android:id="@+id/edit_weight"
+        <EditText
+            android:id="@+id/weight"
             android:layout_width="110dp"
-            android:layout_height="20dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape"
             android:text=""
-            android:background="@drawable/shape"/>
+            android:textSize="18dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/Blue"/>
 
         <ImageView
-            android:id="@+id/plus"
+            android:id="@+id/plus_weight"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/plus"
@@ -114,24 +118,26 @@
         android:background="@drawable/shape">
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/minus_length"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/minus"
             android:contentDescription="@string/minus"/>
 
         <EditText
-            android:id="@+id/textView51"
+            android:id="@+id/Length"
             android:layout_width="110dp"
             android:layout_height="20dp"
             android:autofillHints="creditCardNumber"
             android:background="@drawable/shape"
             android:inputType="number"
             android:text=""
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:textAlignment="center"
+            android:textColor="@color/Blue"/>
 
         <ImageView
-            android:id="@+id/imageButton1"
+            android:id="@+id/plus_length"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/plus"
@@ -157,13 +163,14 @@
         android:translationY="100dp" />
 
     <EditText
-        android:id="@+id/edit_dataBirth"
+        android:id="@+id/date"
         android:layout_width="180dp"
         android:layout_height="25dp"
         android:background="@drawable/shape"
         android:inputType="number"
         android:translationX="180dp"
         android:translationY="80dp"
+        android:textColor="@color/Blue"
         android:autofillHints="@string/date"
         android:labelFor="@id/text_date"
         tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -178,13 +185,14 @@
         android:translationX="40dp"
         android:translationY="100dp" />
     <EditText
-        android:id="@+id/edit_time"
+        android:id="@+id/time"
         android:layout_width="180dp"
         android:layout_height="25dp"
         android:autofillHints="creditCardExpirationDate"
         android:background="@drawable/shape"
         android:inputType="number"
         android:text=""
+        android:textColor="@color/Blue"
         android:translationX="180dp"
         android:translationY="80dp"
         tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -196,6 +204,7 @@
         android:text="@string/Save"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:translationX="35dp"
         android:translationY="150dp" />
 

@@ -44,12 +44,14 @@
         android:textSize="20sp"
         android:translationX="40dp"
         android:translationY="120dp" />
-    <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:translationX="180dp"
-        android:translationY="80dp" >
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gender"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:translationX="180dp"
+            android:translationY="80dp" >
 
         <RadioButton
             android:id="@+id/Male"
@@ -72,7 +74,8 @@
             android:textColor="#0277BD"
             android:textSize="15sp" />
 
-    </LinearLayout>
+
+        </RadioGroup>>
 
     <TextView
         android:id="@+id/weight"
@@ -93,13 +96,13 @@
         android:background="@drawable/shape">
 
         <ImageView
-            android:id="@+id/minus"
+            android:id="@+id/minusWeight"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/minus"
             android:contentDescription="@string/minus"/>
 
-        <TextView
+        <EditText
             android:id="@+id/editWeight"
             android:layout_width="110dp"
             android:layout_height="20dp"
@@ -107,7 +110,7 @@
             android:background="@drawable/shape"/>
 
         <ImageView
-            android:id="@+id/Plus"
+            android:id="@+id/PlusWeight"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/plus"
@@ -144,15 +147,15 @@
         android:background="@drawable/shape">
 
         <ImageView
-            android:id="@+id/Minus"
+            android:id="@+id/MinusLength"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/minus"
             android:contentDescription="@string/minus"
             />
 
-        <TextView
-            android:id="@+id/LengthText"
+        <EditText
+            android:id="@+id/length"
             android:layout_width="110dp"
             android:layout_height="20dp"
             android:autofillHints="creditCardNumber"
@@ -161,7 +164,7 @@
             />
 
         <ImageView
-            android:id="@+id/Pluse"
+            android:id="@+id/PluseLength"
             android:layout_width="20dp"
             android:layout_height="20dp"
             app:srcCompat="@drawable/plus"
