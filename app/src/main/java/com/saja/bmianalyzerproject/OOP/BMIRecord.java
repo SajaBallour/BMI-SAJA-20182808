@@ -5,6 +5,7 @@ public class BMIRecord {
     String Status;
     int length;
     int weight;
+    private String id;
 
     public BMIRecord(String date,String Status, int weight, int length) {
         this.date= date;
@@ -12,7 +13,7 @@ public class BMIRecord {
         this.length= length;
         this.weight= weight;
     }
-
+    public BMIRecord(){}
     public String getDate() {
         return date;
     }
@@ -43,5 +44,13 @@ public class BMIRecord {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

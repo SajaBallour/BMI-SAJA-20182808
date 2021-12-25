@@ -66,6 +66,14 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(Home.this, Add_Food_details.class);
         startActivity(intent);
     }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        checkBMIChange();
+    }
+
+    private void checkBMIChange() {
+    }
 
         /*t = new Timer();
         t.schedule(new TimerTask() {

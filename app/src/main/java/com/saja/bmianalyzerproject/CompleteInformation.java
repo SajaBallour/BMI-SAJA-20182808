@@ -26,8 +26,8 @@ public class CompleteInformation extends AppCompatActivity implements DatePicker
     EditText editWeight,length,editDataBirth;
     ImageView minusWeight,PlusWeight,MinusLength,PluseLength;
     Button Save;
-    int Year ,Month,Day,Hour, Minute;
-    int UserYear, UserMonth,UserDay, UserHour, UserMinute;
+    int Year ,Month,Day;
+    int UserYear, UserMonth,UserDay;
     RadioGroup gender;
     RadioButton RadioButton;
     int i=0;
@@ -35,7 +35,6 @@ public class CompleteInformation extends AppCompatActivity implements DatePicker
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_information);
-        //addListenerOnButton();
 
         PluseLength=findViewById(R.id.PluseLength);
         MinusLength=findViewById(R.id.MinusLength);
@@ -43,8 +42,6 @@ public class CompleteInformation extends AppCompatActivity implements DatePicker
         minusWeight=findViewById(R.id.minus_weight);
         editDataBirth=findViewById(R.id.editDataBirth);
         gender=findViewById(R.id.gender);
-       // RadioButton=findViewById(R.id.Male);
-        //Female=findViewById(R.id.Female);
         Save=findViewById(R.id.Save);
         gender=findViewById(R.id.gender);
 
@@ -57,18 +54,9 @@ public class CompleteInformation extends AppCompatActivity implements DatePicker
         Year = calendar.get(Calendar.YEAR);
         Month = calendar.get(Calendar.MONTH);
         Day = calendar.get(Calendar.DAY_OF_MONTH);
-        editDataBirth.setOnClickListener(v -> {
-            DatePickerDialog date = new DatePickerDialog(CompleteInformation.this, CompleteInformation.this, Year, Month, Day);date.show(); });
-        /*gender.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-                            int radioId = gender.getCheckedRadioButtonId();
-
-                            RadioButton = findViewById(radioId);
-
-                        }
-                    });*/
-
-        Save.setOnClickListener(view -> { startActivity(new Intent(CompleteInformation.this,Home.class));});
+        editDataBirth.setOnClickListener(v -> { DatePickerDialog date = new DatePickerDialog(CompleteInformation.this, CompleteInformation.this, Year, Month, Day);date.show(); });
+        gender.setOnClickListener(v -> { int radioId = gender.getCheckedRadioButtonId();RadioButton = findViewById(radioId); });
+        Save.setOnClickListener(view -> startActivity(new Intent(CompleteInformation.this,Home.class)));
 
         /*t = new Timer();
         t.schedule(new TimerTask() {
@@ -80,41 +68,6 @@ public class CompleteInformation extends AppCompatActivity implements DatePicker
             }
         },5000);*/
     }
-    /*
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.Male:
-                if (checked)
-                    // Pirates are the best
-                    break;
-            case R.id.Female:
-
-        }
-    }*/
-    /*
-    public void addListenerOnButton() {
-        radioSexGroup = (LinearLayout) findViewById(R.id.radioSex);
-        btnDisplay = (Button) findViewById(R.id.btnDisplay);
-
-        btnDisplay.setOnClickListener(new View.OnClickListener() {
-
-
-
-            @Override
-            public void onClick(View v) {
-// get selected radio button from radioGroup
-                int selectedId = radioSexGroup.getChecked();
-// find the radiobutton by returned id
-                radioSexButton = (LinearLayout) findViewById(selectedId);
-
-                Toast.makeText(CompleteInformation.this, radioSexButton.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });}*/
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
         UserYear = year;
