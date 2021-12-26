@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.saja.bmianalyzerproject.OOP.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,58 +38,36 @@ import java.util.TimerTask;
 
 public class Add_Food_details extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Timer t;
-    //EditText name,input_calory,input_category;
-    //Button save,updatePhoto;
-    //ImageView arrow;
 
-    Button btn_upload_photo,btn_save_food;
+    ImageView arrow;
+    Button uploadPhoto,save;
     private String saveCurrentDate, saveCurrentTime;
     String name,category,calory, key;
-    private static final int GalleryPick = 1;
-    private Uri ImageUri;
+
     private String chaletRandomKey, downloadImageUrl;
-    private StorageReference ImagesRef;
+
     private DatabaseReference Ref;
     private ProgressDialog loadingBar;
     FirebaseAuth mAuth;
     private FirebaseDatabase database;
     EditText ed_name_food,ed_calory;
-    ImageView image_food;
+
     String[] country = { " Fruit and vegetables", "Starchy food", "Dairy", "Protein", "Fat"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_details);
-/*
-        arrow=findViewById(R.id.arrow);
-        name=findViewById(R.id.name);
-        input_calory=findViewById(R.id.input_calory);
-        input_category=findViewById(R.id.input_category);
-        save=findViewById(R.id.save);
-        updatePhoto=findViewById(R.id.updatePhoto);
-
         arrow.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Home.class)));
-        save.setOnClickListener(view -> { startActivity(new Intent(Add_Food_details.this,Home.class));});
-*/
-
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-
-        ImagesRef = FirebaseStorage.getInstance().getReference().child("Food Images");
         Ref = FirebaseDatabase.getInstance().getReference("BMI");
-
-
-
-
         loadingBar = new ProgressDialog(this);
-
 
         Spinner spin =  findViewById(R.id.spinner_category);
         ed_name_food =  findViewById(R.id.name);
         ed_calory =  findViewById(R.id.input_calory);
-        btn_save_food =  findViewById(R.id.save);
-        image_food =  findViewById(R.id.image_food);
-        btn_upload_photo =  findViewById(R.id.updatePhoto);
+        save =  findViewById(R.id.save);
+        uploadPhoto =  findViewById(R.id.updatePhoto);
         spin.setOnItemSelectedListener(Add_Food_details.this);
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -107,60 +86,24 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
 
-
-
-        btn_upload_photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OpenGallery();
-            }
-        });
-
-
-        btn_save_food.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ValidateProductData();
             }
         });
-
-
-
     }
-
-    private void OpenGallery() {
-        Intent galleryIntent = new Intent();
-        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-        galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent, GalleryPick);
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-            ImageUri = data.getData();
-            image_food.setImageURI(ImageUri);
-        }
-    }
-
-
     private void ValidateProductData() {
         name = ed_name_food.getText().toString();
         calory = ed_calory.getText().toString();
 
 
-
-        if (ImageUri == null) {
-            Toast.makeText(this, "Food image is mandatory...", Toast.LENGTH_SHORT).show();
-        } else if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, "Please write name...", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(name)) {
+            Toast.makeText(this, "Please write name", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(category)) {
-            Toast.makeText(this, "Please write category food...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write category", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(calory)) {
-            Toast.makeText(this, "Please write calory food...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write calory", Toast.LENGTH_SHORT).show();
         } else {
             StoreProductInformation();
         }
@@ -168,8 +111,7 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
 
 
     private void StoreProductInformation() {
-        loadingBar.setTitle("Add New Food");
-        loadingBar.setMessage("Dear user, please wait while we are adding the new Food.");
+        loadingBar.setMessage("we are adding the new Food");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
@@ -183,11 +125,7 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
 
         chaletRandomKey = saveCurrentDate + " " + saveCurrentTime;
 
-
-        final StorageReference filePath = ImagesRef.child(ImageUri.getLastPathSegment() + chaletRandomKey + ".jpg");
-
-        final UploadTask uploadTask = filePath.putFile(ImageUri);
-
+        final UploadTask uploadTask = null;
 
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
@@ -196,34 +134,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
                 Toast.makeText(Add_Food_details.this, "Error: " + message, Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(Add_Food_details.this, "Food Image uploaded Successfully...", Toast.LENGTH_SHORT).show();
-
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
-                        }
-
-                        downloadImageUrl = filePath.getDownloadUrl().toString();
-                        return filePath.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful()) {
-                            downloadImageUrl = task.getResult().toString();
-
-                            Toast.makeText(Add_Food_details.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
-
-                            SaveProductInfoToDatabase();
-                        }
-                    }
-                });
-            }
         });
     }
 
@@ -231,13 +141,10 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
             HashMap<String, Object> ChaletMap = new HashMap<>();
             ChaletMap.put("name", name);
             ChaletMap.put("calory", calory+" cal /g");
-            ChaletMap.put("image", downloadImageUrl);
             ChaletMap.put("category", category);
             ChaletMap.put("date", saveCurrentDate);
             ChaletMap.put("time", saveCurrentTime);
             ChaletMap.put("key", key);
-
-
 
             key = FirebaseDatabase.getInstance().getReference("Users").push().getKey();
             Ref=database.getReference("BMI");
@@ -246,7 +153,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-
                                 loadingBar.dismiss();
                                 Toast.makeText(Add_Food_details.this, "added successfully..", Toast.LENGTH_SHORT).show();
 
@@ -267,10 +173,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
         public void onNothingSelected(AdapterView<?> arg0) {
             // TODO Auto-generated method stub
         }
-
-
-
-
 
         /*t = new Timer();
         t.schedule(new TimerTask() {

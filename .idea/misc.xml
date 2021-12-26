@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/arrow_dropdown.xml" value="0.12863247863247862" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/background.xml" value="0.12" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.1270042194092827" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_baseline_arrow_drop_up_24.xml" value="0.18076923076923077" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_baseline_arrow_white_24.xml" value="0.1270042194092827" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/raise.xml" value="0.16794871794871793" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/reg_shape.xml" value="0.18076923076923077" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/BMIAnalyzerproject/app/src/main/res/drawable/salamon.xml" value="0.16794871794871793" />

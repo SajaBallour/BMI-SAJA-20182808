@@ -1,5 +1,7 @@
 package com.saja.bmianalyzerproject;
 
+import static com.squareup.okhttp.internal.Internal.instance;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +30,7 @@ public class Home extends AppCompatActivity {
     Button add_record;
     Button add_food;
     Button view_food;
+   // static Home interface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,11 +77,16 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        checkBMIChange();
+       // checkBMIChange();
     }
-
+/*
     private void checkBMIChange() {
-    }
+        if(instance==null)
+            return;
+        instance.adapter.notifyDataSetChange;
+        instance.status.setText(User.user.getHomeMassage());
+        instance.welcome_name.setText("Hi"+User.getUser());
+    }*/
 
         /*t = new Timer();
         t.schedule(new TimerTask() {
@@ -86,7 +94,8 @@ public class Home extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(Home.this, AddBMIRecord.class);
                 startActivity(intent);
-                finish();
+                finish
+                ();
             }
         },5000);*/
     }

@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent x = new Intent(MainActivity.this, Splash.class);
+        Intent x = new Intent(MainActivity.this, Add_Food_details.class);
         startActivity(x);
     }
 }
