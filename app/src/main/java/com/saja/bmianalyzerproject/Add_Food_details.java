@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,10 +16,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -28,8 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.saja.bmianalyzerproject.OOP.User;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -67,7 +62,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
         ed_name_food =  findViewById(R.id.name);
         ed_calory =  findViewById(R.id.input_calory);
         save =  findViewById(R.id.save);
-        uploadPhoto =  findViewById(R.id.updatePhoto);
         spin.setOnItemSelectedListener(Add_Food_details.this);
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -97,7 +91,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
         name = ed_name_food.getText().toString();
         calory = ed_calory.getText().toString();
 
-
         if (TextUtils.isEmpty(name)) {
             Toast.makeText(this, "Please write name", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(category)) {
@@ -108,7 +101,6 @@ public class Add_Food_details extends AppCompatActivity implements AdapterView.O
             StoreProductInformation();
         }
     }
-
 
     private void StoreProductInformation() {
         loadingBar.setMessage("we are adding the new Food");

@@ -30,7 +30,7 @@ public class Home extends AppCompatActivity {
     Button add_record;
     Button add_food;
     Button view_food;
-   // static Home interface;
+    // static Home interface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +77,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-       // checkBMIChange();
+        // checkBMIChange();
     }
 /*
     private void checkBMIChange() {
@@ -98,4 +98,4 @@ public class Home extends AppCompatActivity {
                 ();
             }
         },5000);*/
-    }
+}
